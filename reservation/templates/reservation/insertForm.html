@@ -1,0 +1,61 @@
+<div style="background-image:url(https://images8.alphacoders.com/798/thumb-1920-798346.jpg); width: 100%; height:100%"> 
+
+<div style="background-color:#fff9ea; opacity: 0.9; margin-left: 10%; margin-right:40%; padding: 20px">
+
+{% if error_message %}<p><strong>{{error_message }} </strong></p> {% endif %}
+
+<form action="{% url 'reservation:insert' %}" method="post">
+<input type="radio" name="attribute" id="movie" value="movie"/> <label for="movie"/> Movie </label>
+
+<input type="radio" name="attribute" id="cinema" value="cinema"/> <label for="movie"/> Cinema </label>
+
+<input type="radio" name="attribute" id="showing" value="showing"/> <label for="movie"/> Showing </label>
+
+<input type="radio" name="attribute" id="theatre" value="theatre"/> <label for="theatre"/> Theatre </label>
+
+<h3 style="color:#47370c"> Movie </h3>
+
+
+{% csrf_token %}
+<div> Movie title: <input type="text" name="movie-title"/> </div>
+<div> Duration in minutes: <input type="text" name="duration"/> </div>
+
+
+<h3 style="color:#47370c"> Cinema </h3>
+
+
+{% csrf_token %}
+<div> Cinema Name: <input type="text" name="cinema-name"/> </div>
+<div> Cinema Address: <input type="text" name="cinema-address"/> </div>
+<div> Cinema City: <input type="text" name="cinema-city"/> </div>
+<div> Cinema State: <input type="text" name="cinema-state"/> </div>
+<div> Cinema Country: <input type="text" name="cinema-country"/> </div>
+<div> Cinema Contact: <input type="text" name="cinema-contact"/> </div>
+
+
+
+<h3 style="color:#47370c"> Showing </h3>
+
+
+{% csrf_token %}
+<div><label>Showing date (YYYY-MM-DD):</label> <input type="text" name="showing-date"/> </div>
+<div><label>Showing time (HH:MM:SS): </label> <input type="text" name="showing-time"/> </div>
+<div> Movie: <input type="text" name="movie-title-showing"/> </div>
+<div> Theatre #: <input type="number" name="theatre-id"/> </div>
+
+{% csrf_token %}
+
+<h3 style="color:#47370c"> Theatre </h3>
+
+
+{% csrf_token %}
+<div> Cinema Name: <input type="text" name="theatre-cinema-name"/> </div>
+<div> Capacity: <input type="number" name="theatre-capacity"/> </div>
+
+<br> </br>
+
+<center><input type="submit" value="Submit"/></center>
+</form>
+
+</div>
+</div>

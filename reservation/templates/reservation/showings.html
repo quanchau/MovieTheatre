@@ -1,0 +1,18 @@
+<div style="background-image: url(http://www.listofdownload.com/wp-content/uploads/2017/12/Jumanji-Welcome-to-the-Jungle-Movie-photo-background-3840x2160.jpg); width:100%; height:100%; padding-top: 300px">
+<div style="background-color: white; margin-left:30%; margin-right:30%; padding:20px; text-align:center; font-family: arial; opacity:0.8">
+
+<h2><b> Show time: </b></h2>
+{% if showing_list %}
+
+	{% for show in showing_list %}
+		<a href="{% url 'reservation:info' show.id %}" style="text-decoration:none; color: black; font-size:20px"> {{show.showing_date}} </a>
+		<br></br>
+		
+	{% endfor %}
+
+{% else %}
+	<p> No showings are available for this movie. </p>
+{% endif %}
+</div>
+</div>
+

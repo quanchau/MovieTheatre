@@ -1,0 +1,9 @@
+{% if movie_list %}
+	<ul>
+	{% for movie in movie_list %}
+		<li><a href="{% url 'reservation: showings' movie.id %}">{{movie.movie_title}}</a></li>
+	{% endfor %}
+	</ul>
+{% else %}
+	<p> No movies are stored. </p>
+{% endif %}

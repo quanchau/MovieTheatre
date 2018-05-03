@@ -1,0 +1,29 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'reservations/style.css' %}" />
+
+
+<div style="width:100%; height:100%; background-image: url(https://images8.alphacoders.com/859/859672.png); padding-top: 100px;">
+<div style="opacity: 1; height: relative; margin-left: 30%; margin-right:30%; background-color: #fce9c4; padding-top:20px; opacity:0.8">
+<div style="margin-top:30px; margin-bottom:30px; text-align:center;">
+
+<h3> -- MOVIE LIST -- </h3>
+{% if movie_list %}
+	
+	{% for movie in movie_list %}
+		<a href="{% url 'reservation:showings' movie.id %}" style="text-decoration:none;font-size:25px; color: black; font-family: arial;"> <b>{{movie.movie_title}} </b></a>
+		<br></br>
+		
+
+	{% endfor %}
+	
+{% else %}
+	<p> No movies are stored. </p>
+{% endif %}
+
+
+<div style="border-style: solid;"><h2 style="font-family:arial; "><a href="{% url 'reservation:insertForm' %}" style="text-decoration:none; color:#3d300d;"> INSERT MOVIE INFO </a><h2></div>
+</div>
+</div>
+
+</div>

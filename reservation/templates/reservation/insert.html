@@ -1,0 +1,41 @@
+{% if error_message %}<p><strong>{{error_message }} </strong></p> {% endif %}
+
+
+<input type="radio" name="attribute" id="movie"/> <label for="movie"/> Movie </label>
+
+<input type="radio" name="attribute" id="cinema"/> <label for="movie"/> Cinema </label>
+
+<input type="radio" name="attribute" id="showing"/> <label for="movie"/> Showing </label>
+
+<h1> Movie </h1>
+
+<form action="{% url 'reservation:insert' %}" method="post">
+{% csrf_token %}
+<div> Movie title: <input type="text" name="movie-title"/> </div>
+<div> Duration in minutes: <input type="text" name="movie-title"/> </div>
+
+
+<h1> Cinema </h1>
+
+
+{% csrf_token %}
+<div> Cinema Name: <input type="text" name="cinema-name"/> </div>
+<div> Cinema Address: <input type="text" name="cinema-address"/> </div>
+<div> Cinema City: <input type="text" name="cinema-city"/> </div>
+<div> Cinema State: <input type="text" name="cinema-state"/> </div>
+<div> Cinema Country: <input type="text" name="cinema-country"/> </div>
+<div> Cinema Contact: <input type="text" name="cinema-contact"/> </div>
+
+
+
+<h1> Showing </h1>
+
+
+{% csrf_token %}
+<div> Showing date (YYYY-MM-DD): <input type="text" name="showing-date"/> </div>
+<div> Showing time (HH:MM:SS): <input type="text" name="showing-time"/> </div>
+<div> Movie: <input type="text" name="movie-title"/> </div>
+<div> Theatre #: <input type="text" name="theate-id"/> </div>
+
+
+</form>
